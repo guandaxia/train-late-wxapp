@@ -1,0 +1,87 @@
+/**index.wxss**/
+.header{
+  text-align: center;
+  font-size: 50rpx;
+  margin: 50rpx 0;
+}
+
+.section{
+  height: 4rem;
+  border-top: solid 0.05rem #EAEAEA;
+  border-bottom: solid 0.05rem #EAEAEA;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label{
+  margin: 0 1rem 0;
+}
+
+.input{
+  flex-grow: 2;
+}
+
+.clear-icon{
+  margin-right: 30rpx;
+}
+
+
+.history{
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem; 
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+.number{
+  padding: 1rem;
+}
+
+.keyboard{
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #EAEAEA;
+}
+
+.letter{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;  
+}
+
+ .letter-view{
+  border: solid 1rpx #EAEAEA;
+  margin: 10rpx;
+  background-color: #FFFFFF;
+  flex: 0 0 160rpx;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+} 
+
+.key-number{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin: 30rpx auto;
+}
+
+.number-view{
+  border: solid 1rpx #EAEAEA;
+  margin: 10rpx;
+  background-color: #FFFFFF;
+  flex: 0 0 150rpx;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}

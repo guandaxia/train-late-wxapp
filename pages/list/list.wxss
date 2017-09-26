@@ -1,0 +1,61 @@
+/* pages/list/list.wxss */
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #EEE9E9;
+  font-size: 50rpx;
+  height: 120rpx;
+}
+
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  font-size: 30rpx;
+  border-bottom: solid 1rpx #EAEAEA;
+  color: #1AAD19;
+}
+
+.train-info{
+  height: 800rpx;
+  margin-bottom: 50rpx;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 150rpx;
+  border-bottom: solid 1rpx #EAEAEA;
+}
+
+.station-name{
+  width: 200rpx;
+  margin-left: 100rpx;
+}
+
+.time{
+  width: 100rpx;
+  margin-left: 80rpx;
+  margin-right: 20rpx;
+}
+
+.share{
+  margin-top:30rpx;
+}
+
+.footer{
+  width:100%;
+  position: fixed;
+  bottom: 0; 
+  background-color: #EEAD0E;
+}
+
+.info{
+  width: 90%;
+  margin: 15rpx auto;
+  font-size: 30rpx;
+}

@@ -1,0 +1,31 @@
+<!--pages/list/list.wxml-->
+<view>
+  <view class='header'>
+    <view class='title'>车站名称</view>
+    <view class='title'>到时</view>
+    <view class='title'>发时</view>
+  </view>
+  <view class='tips'>
+    <text>点击站点可查看预计到达该站时间</text>
+  </view>
+  <view wx-if="{{show}}">
+    <scroll-view scroll-y class='train-info'>
+        <view  wx:for="{{station}}" wx:key="*this">
+          <view class='item' bindtap='query' data-station='{{item.station_name}}'>
+            <view class="station-name">{{item.station_name}}</view>
+            <view class="time">{{item.arrive_time}}</view>
+            <view class="time">{{item.start_time}}</view>
+          </view>
+        </view>
+        <view class='share'>
+          <button open-type='share'>分享给好友</button>
+        </view>
+    </scroll-view>
+     
+  </view>
+ 
+  <view class='footer'>
+    <view class='info'>1.仅提供过去1小时和未来3小时内列车正晚点信息。</view>
+    <view class='info'>2. 查询结果仅供参考，以火车到站时间为准。</view>
+  </view>
+</view>
