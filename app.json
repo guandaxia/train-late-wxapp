@@ -1,9 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/list/list",
-    "pages/late/late",
-    "pages/station/station"
+    "pages/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
