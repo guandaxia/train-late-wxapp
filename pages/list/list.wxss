@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: space-around;
   background-color: #EEE9E9;
-  font-size: 50rpx;
-  height: 120rpx;
+  font-size: 30rpx;
+  height: 90rpx;
 }
 
 .tips{
@@ -20,15 +20,14 @@
 }
 
 .train-info{
-  height: 800rpx;
-  margin-bottom: 50rpx;
+  box-sizing: border-box;
 }
 
 .item{
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 150rpx;
+  height: 140rpx;
   border-bottom: solid 1rpx #EAEAEA;
 }
 
@@ -44,7 +43,7 @@
 }
 
 .share{
-  margin-top:30rpx;
+  margin:50rpx auto;
 }
 
 .footer{
@@ -55,7 +54,7 @@
 }
 
 .info{
-  width: 90%;
+  width: 96%;
   margin: 15rpx auto;
-  font-size: 30rpx;
+  font-size: 28rpx;
 }

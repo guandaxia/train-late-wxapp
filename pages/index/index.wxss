@@ -6,19 +6,19 @@
 }
 
 .section{
-  height: 4rem;
-  border-top: solid 0.05rem #EAEAEA;
-  border-bottom: solid 0.05rem #EAEAEA;
-  margin: 1rem auto;
+  height: 100rpx;
+  border-top: solid 1rpx #EAEAEA;
+  border-bottom: solid 1rpx #EAEAEA;
+  margin: 30rpx auto;
   display: flex;
   flex-direction: row;
-  font-size: 1rem; 
+  font-size: 40rpx; 
   align-items: center;
   justify-content: space-between;
 }
 
 .label{
-  margin: 0 1rem 0;
+  margin: 0 10rpx 0;
 }
 
 .input{
@@ -43,6 +43,18 @@
 .number{
   padding: 1rem;
 }
+
+.bottom-buttons{
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 45rpx;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; */
+  color:#1aad19;
+}
+
 
 .keyboard{
   width:100%;

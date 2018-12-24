@@ -9,7 +9,7 @@
     <text>点击站点可查看预计到达该站时间</text>
   </view>
   <view wx-if="{{show}}">
-    <scroll-view scroll-y class='train-info'>
+    <scroll-view scroll-y class='train-info' style='height:{{height}}rpx'>
         <view  wx:for="{{station}}" wx:key="*this">
           <view class='item' bindtap='query' data-station='{{item.station_name}}'>
             <view class="station-name">{{item.station_name}}</view>

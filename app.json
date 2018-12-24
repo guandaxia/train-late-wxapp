@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/setting/setting",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "火车到哪了",
     "navigationBarTextStyle": "black"
   }
 }

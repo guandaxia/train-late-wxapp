@@ -1,0 +1,26 @@
+<!--pages/feedback/feedback.wxml-->
+<view>
+  <form bindsubmit="submit">
+    <view class='content'>
+      <view class="weui-cells__title">反馈内容</view>
+      <view class="weui-cells weui-cells_after-title feedback">
+          <view class="weui-cell">
+              <view class="weui-cell__bd">
+                  <textarea name="content" class="weui-textarea" placeholder="请输入反馈内容"/>
+              </view>
+          </view>
+      </view>
+      <view class="feedback-type">
+        <picker bindchange="bindPickerChange" value="{{type}}" range="{{feedBackArray}}">
+            反馈类型：{{type == '' ? '请选择':feedBackArray[type]}}
+        </picker>
+      </view>
+      <view class='submit'>
+        <button class="weui-btn" type="primary" formType="submit">提交反馈</button>
+      </view>
+    </view>
+  </form>
+</view>
+<view class='bottom'>
+  <ad unit-id="adunit-cde55deae650318c"></ad>
+</view>

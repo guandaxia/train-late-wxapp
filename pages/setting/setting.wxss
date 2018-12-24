@@ -1,0 +1,30 @@
+
+.bottom-buttons{
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 45rpx;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; */
+  color:#1aad19;
+}
+
+.cell{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.cell button{
+  width: 100%;
+  background-color: #fff;
+  text-align: left;
+  line-height:1.41;
+  font-size: 32rpx;
+}
+
+.bottom{
+  width:100%;
+  position: fixed;
+  bottom: 0;
+}

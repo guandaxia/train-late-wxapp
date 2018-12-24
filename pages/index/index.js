@@ -1,7 +1,7 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-const request = require('../../utils/request.js')
+import {http} from '../../utils/http.js'
 
 Page({
   data: {
@@ -95,16 +95,10 @@ Page({
       return
     }
 
-    let option = {
-      url: '/trainTime',
-      method: 'POST',
-      data: {
-        'train_number': trainNumber
-      }
-    }
-    request(option, (res) => {
-      if (res.data.code == 0) {
-        let trainInfo = res.data.data.train_info
+    http('/getStationStopInfo', { 'train_number': trainNumber}, 'POST')
+      .then(res=>{
+        console.log(res)
+        let trainInfo = res.train_info
         wx.setStorageSync('train_info', JSON.stringify(trainInfo))
 
         let startStation = trainInfo[0].station_name
@@ -135,14 +129,13 @@ Page({
         wx.navigateTo({
           url: '../list/list?id=' + trainNumber
         })
-      } else {
-        wx.showModal({
-          title: '错误',
-          content: res.data.msg,
-          showCancel: false
+      }).catch(error=>{
+        wx.showToast({
+          title: error,
+          icon:'none'
         })
-      }
-    })
+      })
+
   },
   query: function (event) {
     let data = event.currentTarget.dataset

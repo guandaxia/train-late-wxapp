@@ -1,5 +1,5 @@
 // pages/list/list.js
-const request = require('../../utils/request.js')
+import {http} from '../../utils/http.js'
 
 Page({
 
@@ -9,13 +9,21 @@ Page({
   data: {
     station: [],
     trainNumber: '',
-    show: false
+    show: false,
+    height: 850,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let deviceInfo = wx.getSystemInfoSync()
+    console.log(deviceInfo)
+    let height = deviceInfo.windowHeight * 1.5
+    this.setData({
+      height
+    })
+
     let trainNumber = options.id
     let that = this
     console.log(options)
@@ -23,42 +31,30 @@ Page({
       title: trainNumber
     })
 
-    let option = {
-      url: '/trainTime',
-      method: 'POST',
-      data: {
-        'train_number': trainNumber
-      }
-    }
-    request(option, (res) => {
-      if (res.data.code == 0) {
-        let trainInfo = res.data.data.train_info
+    http('/trainTime', { 'train_number': trainNumber }, 'POST')
+      .then(res => {
+        console.log(res)
+        let trainInfo = res.train_info
         wx.setStorageSync('train_info', JSON.stringify(trainInfo))
-        that.setData({
+        this.setData({
           station: trainInfo || [],
           trainNumber: trainNumber,
           show: true
         })
-      } else {
-        wx.showModal({
-          title: '错误',
-          content: res.data.msg,
-          showCancel: false
+      })
+
+    wx.getStorage({
+      key: 'train_info',
+      success: function (res) {
+        let trainInfo = JSON.parse(res.data)
+        console.log(trainInfo)
+        that.setData({
+          station: trainInfo || [],
+          trainNumber: trainNumber
         })
       }
     })
 
-    // wx.getStorage({
-    //   key: 'train_info',
-    //   success: function (res) {
-    //     let trainInfo = JSON.parse(res.data)
-    //     console.log(trainInfo)
-    //     that.setData({
-    //       station: trainInfo || [],
-    //       trainNumber: trainNumber
-    //     })
-    //   }
-    // })
   },
 
   /**
@@ -72,34 +68,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 
@@ -128,20 +96,16 @@ Page({
     let station = data.station
     let trainNumber = this.data.trainNumber
 
-    let option = {
-      url: '/trainLate',
-      method: 'POST',
-      data: {
-        'train_number': trainNumber,
-        'station': station
-      }
-    }
-    request(option, (res) => {
-      wx.showModal({
-        content: res.data.data.train_info,
-        showCancel: false
+    http('/trainLate', {
+      'train_number': trainNumber,
+      'station': station
+    }, 'POST')
+      .then(res => {
+        wx.showModal({
+          content: res.train_info,
+          showCancel: false
+        })
       })
-    })
   }
 
 })

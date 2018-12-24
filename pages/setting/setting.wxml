@@ -1,0 +1,57 @@
+<!--pages/setting/setting.wxml-->
+<view>
+  <!-- <form>
+    <view class="weui-cells__title">乘车提醒</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">列车开车前提醒</view>
+            <view class="weui-cell__ft">
+                <switch checked bindchange="beforeDrive"/>
+            </view>
+        </view>
+        <view wx:if="{{showSetting}}" class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">乘车日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="selectDate" mode="date" >
+                    <view class="weui-select weui-cell__ft">{{date}}</view>
+                </picker>
+            </view>
+        </view>  
+        <view wx:if="{{showSetting}}" class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">提醒时间</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="bindTimeChange" mode="selector" value="{{timeSelect}}" range="{{times}}">
+                    <view class="weui-select weui-cell__ft">{{timeSelect}}</view>
+                </picker>
+            </view>
+        </view>     
+    </view>
+    <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree__text">
+            默认乘车日期为查询当天，可以预先设置行程日期
+        </view>
+    </label>
+  </form> -->
+  <view class="cell weui-cells weui-cells_after-title">
+      <navigator url="../feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">意见反馈</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+  </view>
+  <view class="cell weui-cells weui-cells_after-title">
+      <button open-type="contact" class='weui-cell'>
+          <view class="weui-cell__bd">联系开发者</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">
+          </view>
+      </button>
+  </view>
+<button open-type="contact"></button>
+
+</view>
+<view class='bottom'>
+  <ad unit-id="adunit-cde55deae650318c"></ad>
+</view>

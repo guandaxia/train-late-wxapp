@@ -29,6 +29,10 @@
   </view>
 </view>
 
+<view class='bottom-buttons'>
+  <navigator url='../setting/setting'>意见反馈</navigator>
+</view>
+
 </view>
 
 <view class='keyboard' wx-if="{{showKeyboard}}">
